@@ -48,5 +48,8 @@ app.use('/api/users', usersRoutes);
 app.use('/api/post', commentsRoutes);
 
 
+const db = require("./app/models");
+db.sequelize.sync();
+
 // Exportation de l'app pour utilisation par d'autres fichiers, nottament le serveur Node.
 module.exports = app;
